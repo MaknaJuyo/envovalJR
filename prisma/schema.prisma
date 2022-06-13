@@ -9,12 +9,13 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
-model henx {
-  com String @id @unique
-  ite String @db.Text()
+model HENX {
+  com String @db.Char(60) 
+  ite String @db.Char(60) 
   tem Boolean 
+
+  @@id([com,ite])
 }

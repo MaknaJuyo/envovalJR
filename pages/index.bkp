@@ -1,0 +1,188 @@
+import { GetServerSideProps } from "next";
+import { Enxoval, getAllEnxoval } from "../lib/db";
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const enxoval = await getAllEnxoval();
+  return {
+    props: {
+      enxoval,
+    },
+  };
+};
+
+interface PostProps {
+  enxoval: Enxoval[];
+}
+
+const Home = ({ enxoval }: PostProps) => {
+  return (
+    <div>
+      <body id="cozinha">
+          <div className="main-container">
+              <h1>Cozinha</h1>
+              <form id="register-form" method="post" action="config.php">   
+
+                  <div className="half-box">
+                      <input type="checkbox" name="fogao-cbox" id="fogao-cbox" className="cbox"/>
+                      <label htmlFor="fogao-cbox">Fogão</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="travessas-cbox" id="travessas-cbox" className="cbox"/>
+                      <label htmlFor="travessas-cbox">Travessas</label>
+                  </div>
+
+                  <div className="half-box">
+                      <input type="checkbox" name="geladeira-cbox" id="geladeira-cbox" className="cbox"/>
+                      <label htmlFor="geladeira-cbox">Geladeira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="forma-cbox" id="forma-cbox" className="cbox"/>
+                      <label htmlFor="forma-cbox">Forma redonda</label>
+                  </div>
+                  
+                  <div className="half-box">
+                      <input type="checkbox" name="assadeira-cbox" id="assadeira-cbox" className="cbox"/>
+                      <label htmlFor="assadeira-cbox">Assadeira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="coifa-cbox" id="coifa-cbox" className="cbox"/>
+                      <label htmlFor="coifa-cbox">Coifa ou depurador</label>
+                  </div>  
+                  <div className="half-box">
+                      <input type="checkbox" name="filtro-cbox" id="filtro-cbox" className="cbox"/>
+                      <label htmlFor="filtro-cbox">Filtro de água</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="ralador-cbox" id="ralador-cbox" className="cbox"/>
+                      <label htmlFor="ralador-cbox">Ralador</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="torradeira-cbox" id="torradeira-cbox" className="cbox"/>
+                      <label htmlFor="torradeira-cbox">Torradeira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="liquidificador-cbox" id="liquidificador-cbox" className="cbox"/>
+                      <label htmlFor="liquidificador-cbox">Liquidificador</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="facas-cbox" id="facas-cbox" className="cbox"/>
+                      <label htmlFor="facas-cbox">Jogo de facas</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="cafeteira-cbox" id="cafeteira-cbox" className="cbox"/>
+                      <label htmlFor="cafeteira-cbox">Cafeteira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="potes-cbox" id="potes-cbox" className="cbox"/>
+                      <label htmlFor="potes-cbox">Potes</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="portaMantimentos-cbox" id="portaMantimentos-cbox" className="cbox"/>
+                      <label htmlFor="portaMantimentos-cbox">Porta mantimentos</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="espremedor-cbox" id="espremedor-cbox" className="cbox"/>
+                      <label htmlFor="espremedor-cbox">Espremedor de fruta</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="portaTemperos-cbox" id="portaTemperos-cbox" className="cbox"/>
+                      <label htmlFor="portaTemperos-cbox">Porta temperos</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="medidor-cbox" id="medidor-cbox" className="cbox"/>
+                      <label htmlFor="medidor-cbox">Medidor</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="airFrier-cbox" id="airFrier-cbox" className="cbox"/>
+                      <label htmlFor="airFrier-cbox">Air frier</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="tabua-cbox" id="tabua-cbox" className="cbox"/>
+                      <label htmlFor="tabua-cbox">Tábua de corte</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="microondas-cbox" id="microondas-cbox" className="cbox"/>
+                      <label htmlFor="microondas-cbox">Microondas</label>
+                  </div>  
+                  <div className="half-box">
+                      <input type="checkbox" name="luva-cbox" id="luva-cbox" className="cbox"/>
+                      <label htmlFor="luva-cbox">Luva térmica</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="jarras-cbox" id="jarras-cbox" className="cbox"/>
+                      <label htmlFor="jarras-cbox">Jarras</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="abridor-cbox" id="abridor-cbox" className="cbox"/>
+                      <label htmlFor="abridor-cbox">Abridor de lata</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="panelas-cbox" id="panelas-cbox" className="cbox"/>
+                      <label htmlFor="panelas-cbox">Jogo de panelas</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="conchas-cbox" id="conchas-cbox" className="cbox"/>
+                      <label htmlFor="conchas-cbox">Conchas e afins</label>
+                  </div>
+
+                  <div className="half-box">
+                      <input type="checkbox" name="lixeira-cbox" id="lixeira-cbox" className="cbox"/>
+                      <label htmlFor="lixeira-cbox">Lixeira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="balanca-cbox" id="balanca-cbox" className="cbox"/>
+                      <label htmlFor="balanca-cbox">Balança</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="fruteira-cbox" id="fruteira-cbox" className="cbox"/>
+                      <label htmlFor="fruteira-cbox">Fruteita</label>
+                  </div>
+
+                  <div className="half-box">
+                      <input type="checkbox" name="frigideiras-cbox" id="frigideiras-cbox" className="cbox"/>
+                      <label htmlFor="frigideiras-cbox">Frigideiras</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="peneira-cbox" id="peneira-cbox" className="cbox"/>
+                      <label htmlFor="peneira-cbox">Peneira</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="chaleira-cbox" id="chaleira-cbox" className="cbox"/>
+                      <label htmlFor="chaleira-cbox">Chaleira</label>
+                  </div>
+
+                  <div className="half-box">
+                      <input type="checkbox" name="escorredor-cbox" id="escorredor-cbox" className="cbox"/>
+                      <label htmlFor="escorredor-cbox">Escorredor</label>
+                  </div>
+                  <div className="half-box">
+                      <input type="checkbox" name="relogio-cbox" id="relogio-cbox" className="cbox"/>
+                      <label htmlFor="relogio-cbox">Relógio</label>
+                  </div>
+                  
+      
+                  <div className="full-box">
+                      <button type="submit" id="btn-submit" title="Registrar o enxoval do apartamentinho">
+                          <div className="submitIcon"></div>      
+                      </button>
+                  </div>
+              </form>  
+          </div>
+          <div className="main-container">
+              <form action="">
+                  <div className="full-box">
+                      <div id="valorProgresso">
+                          0%
+                      </div>
+                  </div>
+                  <div className="barra">
+                      <div></div>
+                  </div>
+              </form>
+          </div>
+      </body>
+    </div>
+  );
+};
+
+export default Home;

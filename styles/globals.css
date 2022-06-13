@@ -1,16 +1,296 @@
-html,
-body {
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* GERAL */
+
+*{
+  /* VARIÁVEIS */
+
+  --corCozinha1: #5a7458;
+  --corCozinha2: #8DAA90;
+  --corCozinha2Hover: #6a7e6c;
+
+  --corBanheiro: #222;
+  --corLavanderia: #222;
+  
+  --corSalaEstar: #222;
+  --corSalaJantar: #222;
+
+  --corQuarto: #222;
+  --corEscritorio: #222;
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: var(--corCozinha1);
+  border: none;
+  background-repeat: no-repeat;
+  border-bottom: 10px;
 }
+
+/* MENU */
 
 a {
-  color: inherit;
+  color: #FFF;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-* {
-  box-sizing: border-box;
+a:hover {
+  opacity: 0.7;
 }
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex; /* PARA COLOCAR A LISTA AO LADO DA LOGO */
+  justify-content: space-around; /* ESPAÇO AO REDOR SEJA METADE DO ESPAÇO ENTRE ELES*/
+  font-family: Helvetica, Arial, sans-serif;
+  align-items: center;
+  background-color: #23232e;
+  height: 8vh; /* vh é o tamanho da janela visualizada, 100vh é a Janela inteira*/
+}
+
+.nav-list{
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+  color: #FFF;
+}
+
+.mobile-menu div {
+ width: 32px; 
+ height: 2px;
+ background: #FFF;
+ margin: 8px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 999px) {
+  body {
+      overflow-x: hidden;
+  }
+  .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 92vh;
+      background: #23232e;
+      flex-direction: column;
+      align-items: cneter;
+      justify-content: space-around;
+  }
+
+  .nav-list {
+      margin-left: 0;
+      opacity: 0;
+  }
+
+  .mobile-menu {
+      display: block;
+  }
+
+  .nav-list.active {
+     transform: translateX(0); 
+  }
+}
+
+/*#################################*/
+
+h1 {
+  font-family: 'Great Vibes';
+  font-size: 50px;
+}
+
+/* BARRA DE PROGRESSO */
+.barra{
+  margin-bottom: 15px;
+  padding: 1px;
+  width: 100%;
+  height: 15px;
+  border-radius: 1px;
+  background-color: #222;
+}
+
+.barra div{
+  width: 0;
+  height: 13px;
+  border-radius: 1px;
+  background-color: var(--corCozinha2);
+}
+
+#valorProgresso{
+  font-weight: normal;
+  text-align: right;
+}
+
+/* BACKGROUND */
+
+#cozinha, #banheiro, #lavanderia, #salaJantar,
+#salaEstar, #quarto, #escritorio {
+  background-size: auto 100vh;
+  background-position-x: center;
+}
+
+#cozinha {
+  background-image: url('https://wallpaperaccess.com/full/6723863.jpg');
+  background-color: var(--corCozinha1);
+}
+
+#banheiro {
+  background-color: #86496b;
+}
+
+#lavanderia {
+  background-color: #86496b;
+}
+
+#salaJantar {
+  background-color: #86496b;
+}
+
+#salaEstar {
+  background-color: #86496b;
+}
+
+#quarto {
+  background-color: #86496b;
+}
+
+#escritorio {
+  background-color: #86496b;
+}
+
+.main-container {
+  width: 90vw;
+  max-width: 600px;
+  height: auto;
+  padding-top: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 10px auto 10px auto;
+  background-color: #FFF;
+  border-radius: 10px;
+  opacity: 90%;
+  box-shadow: 10px 10px 10px rgba(34, 34, 34, 0.616);
+}
+
+.main-container h1 {
+  text-align: center;
+  margin: 25px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.full-box {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.half-box {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+label:hover{
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  margin-left: 98%;
+  margin-top: 25px;
+  margin-bottom: 10px; 
+  background-color: var(--corCozinha2);
+  color: var(--corCozinha2);
+  border: 2px solid var(--corCozinha1);
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--corCozinha2Hover);
+  color: var(--corCozinha2Hover);
+}
+
+.submitIcon:before{
+  margin-left: 98%;
+  margin-top: 25px;
+  margin-bottom: 10px; 
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 9px;
+  border-radius: 0;
+  background: none;
+  border-right: 4px solid #FFF;
+  border-bottom: 4px solid #FFF;
+  transform: rotate(45deg);
+  top: 8px;
+  left: 13px;
+  cursor: pointer;
+}
+
+button span {
+  color: aliceblue;
+}
+
+.cbox{
+  cursor: pointer;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--corCozinha1);
+  border-radius: 5px;
+}
+
+.cbox, .cbox:before, .cbox:checked, .cbox:checked::before {
+  transition: all 250ms ease-in-out;
+}
+
+.cbox:before{
+  content: '';
+  position: absolute;
+  height: 6px;
+  width: 4px;
+  border-radius: 0;
+  background: none;
+  opacity: 0;
+  border-right: 3px solid #FFF;
+  border-bottom: 3px solid #FFF;
+  transform: rotate(45deg);
+  top: 4px;
+  left: 4px;
+}
+
+.cbox:checked{
+  background-color: var(--corCozinha2);
+}
+
+.cbox:checked::before{
+  opacity: 1;
+}   
