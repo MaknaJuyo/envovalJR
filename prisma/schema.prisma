@@ -12,7 +12,7 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
-model hENX {
+model HENX {
   com String @db.Char(60) 
   ite String @db.Char(60) 
   tem Boolean 
