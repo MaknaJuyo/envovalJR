@@ -7,12 +7,12 @@ export interface Enxoval {
 }
 
 export async function getAllEnxoval() {
-    const data = await prisma.HENX.findMany();
+    const data = await prisma.hENX.findMany();
     return data;
 }
 
 export async function createEnxoval(com: string, ite: string, tem: boolean = false) {
-    await prisma.HENX.create({
+    await prisma.hENX.create({
     data: {
         com,
         ite,
