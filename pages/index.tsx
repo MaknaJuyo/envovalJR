@@ -57,8 +57,6 @@ const Home = ({ enxoval }: PostProps) => {
           </form>
         </div>
       </body>
-      <script> document.getElementById('fogao-cbox').checked = true </script>
-
       <script>
          {   
            enxoval?.map((enx) => (

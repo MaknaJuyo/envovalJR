@@ -13,7 +13,7 @@ export async function getAllEnxoval() {
 
 export async function createEnxoval(com: string, ite: string, tem: boolean = false) {
     await prisma.hENX.create({
-    data: {
+    data: { 
         com,
         ite,
         tem
