@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import { Enxoval, getAllEnxoval } from "../lib/db";
-import { getCheckbox, getItem, getItemChecked } from "../lib/checkbox";
+import { getItem, getItemChecked } from "../lib/checkbox";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const enxoval = await getAllEnxoval();
@@ -21,7 +21,7 @@ const Home = ({ enxoval }: PostProps) => {
 
     await fetch("/api/enxoval", {
       method: 'POST',
-      body: getCheckbox(),
+      body: ''
     })
   }
 
@@ -57,13 +57,6 @@ const Home = ({ enxoval }: PostProps) => {
           </form>
         </div>
       </body>
-      <script>
-         {   
-           enxoval?.map((enx) => (
-              getItemChecked(enx.ite, enx.tem)
-           ))
-         }
-      </script>
     </div>
   )
 }
